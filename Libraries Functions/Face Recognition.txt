@@ -1,0 +1,66 @@
+Face_Recognition
+
+1.load_image_file
+Loads an image file (.jpg, .png, etc) into a numpy array
+
+Parameters:	file – image file name or file object to load
+                mode – format to convert the image to. Only ‘RGB’ (8-bit RGB, 3 channels) and ‘L’ (black and white) are supported.
+
+Returns:	image contents as numpy array
+
+
+
+
+2.face_encodings
+Given an image, return the 128-dimension face encoding for each face in the image.
+
+Parameters:	face_image – The image that contains one or more faces 
+                known_face_locations – Optional - the bounding boxes of each face if you already know them.
+                num_jitters – How many times to re-sample the face when calculating encoding. Higher is more accurate, but slower (i.e. 100 is 100x slower)
+                model – Optional - which model to use. “large” or “small” (default) which only returns 5 points but is faster.
+
+Returns:	A list of 128-dimensional face encodings (one for each face in the image)
+
+
+
+
+3.compare_faces
+
+Compare a list of face encodings against a candidate encoding to see if they match.
+
+Parameters:	known_face_encodings – A list of known face encodings
+                face_encoding_to_check – A single face encoding to compare against the list
+                tolerance – How much distance between faces to consider it a match. Lower is more strict. 0.6 is typical best performance.
+
+Returns:	A list of True/False values indicating which known_face_encodings match the face encoding to check
+
+
+
+
+4.face_locations
+Returns an 2d array of bounding boxes of human faces in a image using the cnn face detector If you are using a GPU, this can give you much faster results since the GPU can process batches of images at once. If you aren’t using a GPU, you don’t need this function.
+
+Parameters:	images – A list of images (each as a numpy array)
+                number_of_times_to_upsample – How many times to upsample the image looking for faces. Higher numbers find smaller faces.
+                batch_size – How many images to include in each GPU processing batch.
+
+Returns:	A list of tuples of found face locations in css (top, right, bottom, left) order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

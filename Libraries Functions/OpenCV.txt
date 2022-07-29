@@ -1,0 +1,148 @@
+OpenCV
+
+1.VideoCapture
+
+With OpenCV, we can capture a video from the camera. It lets you create a video capture object which is helpful to capture videos through webcam and then you may perform desired operations on that video.
+
+Use cv2.VideoCapture() to get a video capture object for the camera.
+Set up an infinite while loop and use the read() method to read the frames using the above created object.
+
+Use cv2.imshow() method to show the frames in the video.
+Breaks the loop when the user clicks a specific key.
+
+
+2.imwrite
+
+The function imwrite saves the image to the specified file.
+
+cv2. imwrite() method is used to save an image to any storage device. This will save the image according to the specified format in current working directory. 
+
+Syntax: cv2.imwrite(filename, image)
+
+Parameters:
+
+filename: A string representing the file name. The filename must include image format like .jpg, .png, etc.
+image: It is the image that is to be saved.
+
+
+
+3.cvtColor
+
+v2.cvtColor() method is used to convert an image from one color space to another. There are more than 150 color-space conversion methods available in OpenCV.
+
+Syntax: cv2.cvtColor(src, code[, dst[, dstCn]])
+
+Parameters:
+
+src: It is the image whose color space is to be changed.
+code: It is the color space conversion code.
+dst: It is the output image of the same size and depth as src image. It is an optional parameter.
+dstCn: It is the number of channels in the destination image. If the parameter is 0 then the number of the channels is derived automatically from src and code. It is an optional parameter.
+
+Return Value: It returns an image.
+
+
+
+4.putText
+
+cv2.putText() method is used to draw a text string on any image.
+
+Syntax: cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]])
+
+Parameters:
+image: It is the image on which text is to be drawn.
+text: Text string to be drawn.
+org: It is the coordinates of the bottom-left corner of the text string in the image. The coordinates are represented as tuples of two values i.e. (X coordinate value, Y coordinate value).
+font: It denotes the font type. Some of font types are FONT_HERSHEY_SIMPLEX, FONT_HERSHEY_PLAIN, , etc.
+fontScale: Font scale factor that is multiplied by the font-specific base size.
+color: It is the color of text string to be drawn. For BGR, we pass a tuple. eg: (255, 0, 0) for blue color.
+thickness: It is the thickness of the line in px.
+lineType: This is an optional parameter.It gives the type of the line to be used.
+bottomLeftOrigin: This is an optional parameter. When it is true, the image data origin is at the bottom-left corner. Otherwise, it is at the top-left corner.
+
+Return Value: It returns an image.
+
+
+
+5.rectangle
+
+cv2.rectangle() method is used to draw a rectangle on any image.
+
+Syntax: cv2.rectangle(image, start_point, end_point, color, thickness)
+
+Parameters:
+image: It is the image on which rectangle is to be drawn.
+start_point: It is the starting coordinates of rectangle. The coordinates are represented as tuples of two values i.e. (X coordinate value, Y coordinate value).
+end_point: It is the ending coordinates of rectangle. The coordinates are represented as tuples of two values i.e. (X coordinate value, Y coordinate value).
+color: It is the color of border line of rectangle to be drawn. For BGR, we pass a tuple. eg: (255, 0, 0) for blue color.
+thickness: It is the thickness of the rectangle border line in px. Thickness of -1 px will fill the rectangle shape by the specified color.
+
+Return Value: It returns an image.
+
+
+
+6.imshow
+
+cv2.imshow() method is used to display an image in a window. The window automatically fits to the image size.
+
+Syntax: cv2.imshow(window_name, image)
+
+Parameters: 
+window_name: A string representing the name of the window in which image to be displayed. 
+image: It is the image that is to be displayed.
+
+Return Value: It doesn’t returns anything. 
+
+
+
+7.waitkey
+
+waitkey() function allows users to display a window for given milliseconds or until any key is pressed. It takes time in milliseconds as a parameter and waits for the given time to destroy the window, if 0 is passed in the argument it waits till any key is pressed. 
+
+
+
+Pandas
+
+1.read_csv
+
+read_csv is an important pandas function to read csv files and do operations on it. 
+
+2.tolist
+
+Pandas tolist() is used to convert a series to list. Initially the series is of type pandas.core.series.Series and applying tolist() method, it is converted to list data type.
+
+Syntax: Series.tolist()
+
+Return type: Converted series into List
+
+3.DataFrame
+Two-dimensional, size-mutable, potentially heterogeneous tabular data.
+
+Data structure also contains labeled axes (rows and columns). Arithmetic operations align on both row and column labels. Can be thought of as a dict-like container for Series objects. The primary pandas data structure.
+
+4.to_csv
+
+The to_csv() function is used to write object to a comma-separated values (csv) file.
+
+
+
+sys
+
+This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+
+
+
+datetime
+
+datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])
+The year, month and day arguments are required. tzinfo may be None, or an instance of a tzinfo subclass. The remaining arguments may be ints.
+
+1.now
+
+Construct a datetime from time.time() and optional time zone info.
+
+
+shape
+
+Tuple of array dimensions.
+The shape property is usually used to get the current shape of an array, but may also be used to reshape the array in-place by assigning a tuple of array dimensions to it.
