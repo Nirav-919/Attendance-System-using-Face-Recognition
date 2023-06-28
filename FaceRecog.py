@@ -1,4 +1,4 @@
-#Face recognition and attandance management project
+#Face recognition and attendance management project
 
 import face_recognition
 import cv2
